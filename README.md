@@ -1,2 +1,3 @@
-# 04_BattleTank
+# BattleTank
 Open world tank fight with simple IA
+
