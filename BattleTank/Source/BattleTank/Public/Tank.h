@@ -28,4 +28,7 @@ public:
 
 	void AimAt(FVector HitLocation);
 	
+protected:
+
+	class UTankAimingComponent*  TankAimingComponent = nullptr;
 };
