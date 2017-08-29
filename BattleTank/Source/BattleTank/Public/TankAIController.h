@@ -18,6 +18,8 @@ private:
 
 	virtual void BeginPlay() override;
 
+	virtual void Tick(float DeltaTime) override;
+
 	class ATank* GetAIControlledTank() const;
 
 	class ATank* GetPlayerTank() const;
