@@ -20,6 +20,8 @@ public:
 
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
 
+	//TODO Set a turret reference
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

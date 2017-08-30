@@ -57,11 +57,6 @@ void UTankAimingComponent::AimAt(FVector WorldSpaceAim, float LaunchSpeed)
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
 		
 		MoveBarrel(AimDirection);
-
-		//Move Barrel
-		// converter a direção em uma rotação
-			// aplicar a rotação no socket do barrel ----> pitch
-			// rotacionar a torre ----> Yaw
 	}
 }
 
@@ -73,8 +68,6 @@ void UTankAimingComponent::MoveBarrel(FVector AimDirection)
 	FRotator DeltaRotator = AimRotator - BarrelRotator;
 
 
-	Barrel->Elevate(5);
-	// converter a direção em uma rotação
-		// aplicar a rotação no socket do barrel ----> pitch
-		// rotacionar a torre ----> Yaw
+	Barrel->Elevate(5, DeltaRotator);
+
 }
