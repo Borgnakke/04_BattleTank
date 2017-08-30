@@ -50,11 +50,28 @@ void UTankAimingComponent::AimAt(FVector WorldSpaceAim, float LaunchSpeed)
 	FVector StartLocation = Barrel->GetSocketLocation(FName("Projectile"));
 
 	// Calculate the out launch velocity
-	if (UGameplayStatics::SuggestProjectileVelocity(this, OutLaunchVelocity, StartLocation, WorldSpaceAim, LaunchSpeed, false, 0.0f, 0.0f, ESuggestProjVelocityTraceOption::DoNotTrace))
+	if (UGameplayStatics::SuggestProjectileVelocity(this, OutLaunchVelocity, StartLocation, WorldSpaceAim, LaunchSpeed, ESuggestProjVelocityTraceOption::DoNotTrace))
 	{
 		// Create an unity vector
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
-		auto TankName = GetOwner()->GetName();
-		UE_LOG(LogTemp, Warning, TEXT("Aiming at: %s ---- %s"), *AimDirection.ToString(), *TankName);
+		
+		MoveBarrel(AimDirection);
+
+		//Move Barrel
+		// converter a direção em uma rotação
+			// aplicar a rotação no socket do barrel ----> pitch
+			// rotacionar a torre ----> Yaw
 	}
+}
+
+void UTankAimingComponent::MoveBarrel(FVector AimDirection)
+{
+	// obter a rotação atual
+	FRotator BarrelRotator = Barrel->GetForwardVector().Rotation();
+	FRotator AimRotator = AimDirection.Rotation();
+	FRotator DeltaRotator = AimRotator - BarrelRotator;
+
+	// converter a direção em uma rotação
+		// aplicar a rotação no socket do barrel ----> pitch
+		// rotacionar a torre ----> Yaw
 }
