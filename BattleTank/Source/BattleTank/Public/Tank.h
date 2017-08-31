@@ -40,6 +40,6 @@ protected:
 private:
 
 	/** Launch speed in 1000m/s */
-	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "Firing", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, Category = "Firing")
 	float LaunchSpeed = 100000.0f; //TODO find a sensible default value
 };

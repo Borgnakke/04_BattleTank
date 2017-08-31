@@ -5,11 +5,9 @@
 
 
 
-void UTankBarrel::Elevate(float DegreesPerSecond, FRotator DeltaRotator)
+void UTankBarrel::Elevate(float RelativeSpeed, FRotator DeltaRotator)
 {
 	// converter a direção em uma rotação
 	// aplicar a rotação no socket do barrel ----> pitch
 	// rotacionar a torre ----> Yaw
-
-	UE_LOG(LogTemp, Warning, TEXT("Barrel Speed: %f"), DegreesPerSecond);
 }
