@@ -20,11 +20,11 @@ public:
 
 protected:
 	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	//virtual void BeginPlay() override;
 
 public:	
 	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	/*virtual void Tick(float DeltaTime) override;*/
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -36,6 +36,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Setup")
 	void SetTurretReference(UTankTurret* TurretToSet);
+
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void Fire();
 	
 protected:
 

@@ -20,23 +20,23 @@ UTankAimingComponent::UTankAimingComponent()
 }
 
 
-// Called when the game starts
-void UTankAimingComponent::BeginPlay()
-{
-	Super::BeginPlay();
-
-	// ...
-	
-}
-
-
-// Called every frame
-void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-{
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
-}
+//// Called when the game starts
+//void UTankAimingComponent::BeginPlay()
+//{
+//	Super::BeginPlay();
+//
+//	// ...
+//	
+//}
+//
+//
+//// Called every frame
+//void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+//{
+//	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+//
+//	// ...
+//}
 
 //---------------------------------------------------------------------------
 
@@ -44,7 +44,6 @@ void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet)
 {
 	if (!BarrelToSet) 
 	{ 
-		UE_LOG(LogTemp, Warning, TEXT("Barrel Not Found: %s"), *GetOwner()->GetName()); 
 		return; 
 	}
 	Barrel = BarrelToSet;
@@ -54,7 +53,6 @@ void UTankAimingComponent::SetTurretReference(UTankTurret* TurretToSet)
 {
 	if (!TurretToSet) 
 	{ 
-		UE_LOG(LogTemp, Warning, TEXT("Turret Not Found: %s"), *GetOwner()->GetName());
 		return; 
 	}
 	Turret = TurretToSet;
@@ -75,14 +73,6 @@ void UTankAimingComponent::AimAt(FVector WorldSpaceAim, float LaunchSpeed)
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
 		MoveBarrel(AimDirection);
 		MoveTurret(AimDirection);
-
-		auto Time = GetWorld()->GetTimeSeconds();
-		//UE_LOG(LogTemp, Warning, TEXT("%f: Solution found -----: %s"), Time, *AimDirection.ToString());
-	}
-	else
-	{
-		auto Time = GetWorld()->GetTimeSeconds();
-		//UE_LOG(LogTemp, Warning, TEXT("%f: Solution not found"), Time);
 	}
 }
 

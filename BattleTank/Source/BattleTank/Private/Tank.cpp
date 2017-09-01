@@ -15,19 +15,19 @@ ATank::ATank()
 	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));
 }
 
-// Called when the game starts or when spawned
-void ATank::BeginPlay()
-{
-	Super::BeginPlay();
-	
-}
-
-// Called every frame
-void ATank::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
+//// Called when the game starts or when spawned
+//void ATank::BeginPlay()
+//{
+//	Super::BeginPlay();
+//	
+//}
+//
+//// Called every frame
+//void ATank::Tick(float DeltaTime)
+//{
+//	Super::Tick(DeltaTime);
+//
+//}
 
 // Called to bind functionality to input
 void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -49,4 +49,9 @@ void ATank::SetBarrelReference(UTankBarrel* BarrelToSet)
 void ATank::SetTurretReference(UTankTurret* TurretToSet)
 {
 	TankAimingComponent->SetTurretReference(TurretToSet);
+}
+
+void ATank::Fire()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Firing projectile"));
 }
