@@ -19,6 +19,7 @@ UTankAimingComponent::UTankAimingComponent()
 	// ...
 }
 
+//BeginPlay and Tik
 
 //// Called when the game starts
 //void UTankAimingComponent::BeginPlay()
@@ -63,7 +64,7 @@ void UTankAimingComponent::AimAt(FVector WorldSpaceAim, float LaunchSpeed)
 	if (!Barrel || !Turret) { return; }
 	
 	FVector OutLaunchVelocity;
-	FVector StartLocation = Barrel->GetSocketLocation(FName("Projectile"));
+	FVector StartLocation = Barrel->GetSocketLocation(FName("ProjectileSocket"));
 
 	// Calculate the out launch velocity
 	auto LaunchVelocity = UGameplayStatics::SuggestProjectileVelocity(this, OutLaunchVelocity, StartLocation, WorldSpaceAim, LaunchSpeed, false, 0.0f, 0.0f, ESuggestProjVelocityTraceOption::DoNotTrace);
