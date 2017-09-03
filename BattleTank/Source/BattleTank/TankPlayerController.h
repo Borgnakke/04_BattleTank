@@ -40,12 +40,12 @@ private:
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 
 	// Crosshair location
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 	float CossHairXLocation = 0.5f;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 	float CossHairYLocation = 0.33333f;
 
-	UPROPERTY(EditAnywhere)
-	float LineTraceRange = 1000000;
+	UPROPERTY(EditDefaultsOnly)
+	float LineTraceRange = 1000000.0f;
 };
