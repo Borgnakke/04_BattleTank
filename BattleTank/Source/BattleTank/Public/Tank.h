@@ -56,4 +56,9 @@ private:
 
 	// Local Barrel refernce for spawning projectiles
 	UTankBarrel* Barrel = nullptr;
+
+	UPROPERTY(EditAnywhere, Category = "Setup")
+	float ReloadTime = 3.0f;
+
+	double LastFireTime = 0;
 };
