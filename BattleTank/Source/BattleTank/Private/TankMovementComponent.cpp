@@ -14,8 +14,6 @@ void UTankMovementComponent::IntendMoveFoward(float Throw)
 {
 	if (!LeftTrack || !RightTrack) { return; }
 
-	//UE_LOG(LogTemp, Warning, TEXT("Forward: %f"), Throw);
-
 	LeftTrack->SetThrottle(Throw);
 	RightTrack->SetThrottle(Throw);
 }
